@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+node_js:
+- stable
+- 4
+install: npm update
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: npm
+  email: dominic@dbarnes.info
+  api_key:
+    secure: QyKUO0QCAu+avtZd5RfVWKqPAdwTfuI9czX/YPeQVMO0yduCdBn+3hlIbYKPHSbjd42g+FTtr+0+tt3tqBVPIIf2DJbfy5zH3C3TGx6ymS1wUU9DALLJFqv9y1IUXBXr2Oj+z721RODB5gvXuUlcyb7TFWDMDkUb8+JLc9YfX+0E39gEryjkrDUJSNQfOrirqyIvrMg0Tqh3oFXVP5sxcUANALguXUc1O9hPLtpB2Iv1/lItHTBJIl2FUIm2ZpoL9FIrIBKvGPWPhmpFHldDEaBnbnkDHptBOybUNVpBEDTza0XNLTSNQNM0dnhvA3pd8wfnoA2J33TgmPFONdtBu7oEPQMyjWYGSKT/45x0hT/oQPXc/4oUvT4QCjA2QCgFacuROOBj/Bq2RQw93I5lVYC2RUd4kr6bUmF4nRdEuRTMTk8Q4Ck1aMnaFXRndswZcIjrbhxEzP+ksmy+XpL0Kl3S/LVWUsUZGGhS9WYMdfINfyw5+S72p6aBtuZY76ZGJHkPVuR+oU2Tnoj+d4fFLHqVbPqUVCGGDCxWt7YtputSTHXoPMxmtQUMrhIbS9fnVvV3S4L7+j3/Ls84to6nwqqT/t7YodyA3+OXFsDL1v1p9rBY6EhN3nn41NBBprXdRUZ2oknYv+TZbkJU+J12XC0Qoc0QDDYLvhgKtDqemEw=
+  on:
+    tags: true
+    repo: makojs/browser
