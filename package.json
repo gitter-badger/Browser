@@ -14,12 +14,12 @@
   "dependencies": {
     "debug": "^2.2.0",
     "defaults": "^1.0.3",
-    "mako-copy": "0.0.3",
-    "mako-css": "0.0.2",
-    "mako-js": "0.0.2",
-    "mako-output": "0.0.3",
+    "mako-copy": "0.0.5",
+    "mako-css": "0.0.3",
+    "mako-js": "0.0.3",
+    "mako-output": "0.0.4",
     "mako-stat": "^0.1.0",
-    "mako-symlink": "0.0.3",
+    "mako-symlink": "0.0.5",
     "mako-text": "^0.1.1",
     "mako-write": "0.0.3"
   },
