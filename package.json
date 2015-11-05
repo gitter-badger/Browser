@@ -2,19 +2,26 @@
   "name": "mako-browser",
   "version": "0.0.2",
   "description": "A mako plugin bundle for building a front-end project.",
+  "keywords": [
+    "mako",
+    "plugin",
+    "bundle",
+    "browser",
+    "front-end"
+  ],
   "repository": "makojs/browser",
   "license": "MIT",
   "dependencies": {
     "debug": "^2.2.0",
     "defaults": "^1.0.3",
-    "mako-copy": "0.0.1",
+    "mako-copy": "0.0.3",
     "mako-css": "0.0.2",
-    "mako-js": "0.0.1",
-    "mako-output": "0.0.1",
+    "mako-js": "0.0.2",
+    "mako-output": "0.0.3",
     "mako-stat": "^0.1.0",
-    "mako-symlink": "0.0.1",
+    "mako-symlink": "0.0.3",
     "mako-text": "^0.1.1",
-    "mako-write": "0.0.1"
+    "mako-write": "0.0.3"
   },
   "peerDependencies": {
     "mako": "^0.2.0"
