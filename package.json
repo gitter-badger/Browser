@@ -16,7 +16,7 @@
     "defaults": "^1.0.3",
     "mako-copy": "0.0.5",
     "mako-css": "0.0.3",
-    "mako-js": "0.0.3",
+    "mako-js": "^0.1.0",
     "mako-output": "0.0.4",
     "mako-stat": "^0.1.0",
     "mako-symlink": "0.0.5",
