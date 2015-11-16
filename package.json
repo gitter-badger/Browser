@@ -15,13 +15,13 @@
     "debug": "^2.2.0",
     "defaults": "^1.0.3",
     "mako-copy": "0.0.5",
-    "mako-css": "0.0.3",
-    "mako-js": "^0.1.0",
+    "mako-css": "^0.1.0",
+    "mako-js": "^0.2.0",
     "mako-output": "0.0.4",
     "mako-stat": "^0.1.0",
     "mako-symlink": "0.0.5",
     "mako-text": "^0.1.1",
-    "mako-write": "0.0.3"
+    "mako-write": "0.0.4"
   },
   "peerDependencies": {
     "mako": "^0.2.0"
