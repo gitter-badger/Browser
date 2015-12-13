@@ -89,8 +89,12 @@ This will simply import [normalize.css](https://github.com/necolas/normalize.css
 
 Initializes the plugin, available `options` include:
 
- - `output`: sets the output directory name (default: `build`)
- - `read`: if turned off, it will not attach any read plugins (allowing you to define your own)
- - `root`: sets the root project directory (default: `process.cwd()`)
- - `symlink`: turn on to symlink assets instead of copying (faster for development)
- - `write`: if turned off, it will not attach any write plugins (useful when used in a server)
+ - `cssExtensions` additional CSS extensions (eg: `.styl`, `.less`, etc)
+ - `jsExtensions` additional JS extensions (eg: `.coffee`, `.es`, etc)
+ - `output` sets the output directory name (default: `build`)
+ - `read` if turned off, it will not attach any read plugins (allowing you to define your own)
+ - `resolveOptions` additional arguments passed to [resolve](https://www.npmjs.com/package/resolve) in css/js
+ - `root` sets the root project directory (default: `process.cwd()`)
+ - `sourceMaps` allows turning on source-maps for js
+ - `symlink` turn on to symlink assets instead of copying (faster for development)
+ - `write` if turned off, it will not attach any write plugins (useful when used in a server)

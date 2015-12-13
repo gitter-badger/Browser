@@ -14,24 +14,40 @@ let write = require('mako-write');
 
 module.exports = function (options) {
   let config = defaults(options, {
+    cssExtensions: null,
+    jsExtensions: null,
     output: 'build',
     read: true,
+    resolveOptions: null,
     root: process.cwd(),
+    sourceMaps: false,
     symlink: false,
     write: true
   });
 
   return function browser(mako) {
+    let assets = [ css.images, css.fonts ];
+
     if (config.read) {
-      mako.use(stat([ 'js', 'json', 'css', css.images, css.fonts ]));
+      mako.use(stat([ 'js', 'json', 'css', assets ]));
       mako.use(text([ 'js', 'json', 'css' ]));
     }
 
-    mako.use(js());
-    mako.use(css());
+    mako.use(js({
+      extensions: config.jsExtensions,
+      resolveOptions: config.resolveOptions,
+      root: config.root,
+      sourceMaps: config.sourceMaps
+    }));
+
+    mako.use(css({
+      extensions: config.cssExtensions,
+      resolveOptions: config.resolveOptions,
+      root: config.root
+    }));
 
     if (config.write) {
-      mako.use(output([ 'js', 'css', css.images, css.fonts ], {
+      mako.use(output([ 'js', 'css', assets ], {
         root: config.root,
         dir: config.output
       }));
@@ -39,9 +55,9 @@ module.exports = function (options) {
       mako.use(write([ 'js', 'css' ]));
 
       if (config.symlink) {
-        mako.use(symlink([ css.images, css.fonts ]));
+        mako.use(symlink(assets));
       } else {
-        mako.use(copy([ css.images, css.fonts ]));
+        mako.use(copy(assets));
       }
     }
   };
