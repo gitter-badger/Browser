@@ -3,6 +3,7 @@
 
 let copy = require('mako-copy');
 let css = require('mako-css');
+let debug = require('debug')('mako-browser');
 let defaults = require('defaults');
 let js = require('mako-js');
 let output = require('mako-output');
@@ -13,6 +14,7 @@ let write = require('mako-write');
 
 
 module.exports = function (options) {
+  debug('initialize %j', options);
   let config = defaults(options, {
     cssExtensions: null,
     jsExtensions: null,
@@ -29,6 +31,7 @@ module.exports = function (options) {
     let assets = [ css.images, css.fonts ];
 
     if (config.read) {
+      debug('adding read plugins');
       mako.use(stat([ 'js', 'json', 'css', assets ]));
       mako.use(text([ 'js', 'json', 'css' ]));
     }
@@ -47,6 +50,7 @@ module.exports = function (options) {
     }));
 
     if (config.write) {
+      debug('adding write plugins');
       mako.use(output([ 'js', 'css', assets ], {
         root: config.root,
         dir: config.output
