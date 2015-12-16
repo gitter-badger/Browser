@@ -57,6 +57,7 @@ module.exports = function (options) {
       }));
 
       mako.use(write([ 'js', 'css' ]));
+      if (config.sourceMaps) mako.use(write('map'));
 
       if (config.symlink) {
         mako.use(symlink(assets));
