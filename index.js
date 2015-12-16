@@ -51,13 +51,22 @@ module.exports = function (options) {
 
     if (config.write) {
       debug('adding write plugins');
+
       mako.use(output([ 'js', 'css', assets ], {
         root: config.root,
         dir: config.output
       }));
 
       mako.use(write([ 'js', 'css' ]));
-      if (config.sourceMaps) mako.use(write('map'));
+
+      if (config.sourceMaps) {
+        mako.use(output('map', {
+          root: config.root,
+          dir: config.output
+        }));
+
+        mako.use(write('map'));
+      }
 
       if (config.symlink) {
         mako.use(symlink(assets));
