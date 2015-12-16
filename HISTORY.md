@@ -1,4 +1,9 @@
 
+0.4.2 / 2015-12-15
+==================
+
+  * also write map files when sourceMaps is turned on
+
 0.4.1 / 2015-12-14
 ==================
 
