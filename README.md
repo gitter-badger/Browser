@@ -90,6 +90,7 @@ This will simply import [normalize.css](https://github.com/necolas/normalize.css
 Initializes the plugin, available `options` include:
 
  - `cssExtensions` additional CSS extensions (eg: `.styl`, `.less`, etc)
+ - `forceCopy` when using copy, override the conditional behavior
  - `jsExtensions` additional JS extensions (eg: `.coffee`, `.es`, etc)
  - `output` sets the output directory name (default: `build`)
  - `read` if turned off, it will not attach any read plugins (allowing you to define your own)

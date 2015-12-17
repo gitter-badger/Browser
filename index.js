@@ -17,6 +17,7 @@ module.exports = function (options) {
   debug('initialize %j', options);
   let config = defaults(options, {
     cssExtensions: null,
+    forceCopy: false,
     jsExtensions: null,
     output: 'build',
     read: true,
@@ -71,7 +72,7 @@ module.exports = function (options) {
       if (config.symlink) {
         mako.use(symlink(assets));
       } else {
-        mako.use(copy(assets));
+        mako.use(copy(assets, { force: config.forceCopy }));
       }
     }
   };
