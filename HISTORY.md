@@ -1,4 +1,9 @@
 
+0.6.0 / 2015-12-31
+==================
+
+  * updating mako-css and adding css sourcemaps support
+
 0.5.0 / 2015-12-22
 ==================
 
