@@ -47,7 +47,8 @@ module.exports = function (options) {
     mako.use(css({
       extensions: config.cssExtensions,
       resolveOptions: config.resolveOptions,
-      root: config.root
+      root: config.root,
+      sourceMaps: config.sourceMaps
     }));
 
     if (config.write) {
