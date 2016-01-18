@@ -26,7 +26,7 @@ describe('browser plugin', function () {
     return builder.build([ js, css ]).then(function (tree) {
       let jsFile = tree.getFile(js);
       // js file execs and returns the right value
-      assert.strictEqual(exec(jsFile.contents), true);
+      assert.strictEqual(exec(jsFile), true);
       // output location is what we expected
       assert.strictEqual(jsFile.output, fixture('simple/build/index.js'));
 
@@ -46,7 +46,7 @@ describe('browser plugin', function () {
     return builder.build([ js, css ]).then(function (tree) {
       let jsFile = tree.getFile(js);
       // js file execs and returns the right value
-      assert.strictEqual(exec(jsFile.contents), 4);
+      assert.strictEqual(exec(jsFile), 4);
 
       let cssFile = tree.getFile(css);
       // css file at least contains a substring we expect (not super-reliable)
@@ -63,7 +63,7 @@ describe('browser plugin', function () {
     return builder.build([ js, css ]).then(function (tree) {
       let jsFile = tree.getFile(js);
       // js file execs and returns the right value
-      assert.deepEqual(exec(jsFile.contents), [ 'a', 'a', 'a' ]);
+      assert.deepEqual(exec(jsFile), [ 'a', 'a', 'a' ]);
 
       let cssFile = tree.getFile(css);
       // css file at least contains a substring we expect (not super-reliable)
@@ -92,6 +92,6 @@ describe('browser plugin', function () {
  * @param {String} code  The source code to run. (ie: the result of a build)
  * @return {*}
  */
-function exec(code) {
-  return vm.runInNewContext(code + '(1)');
+function exec(file) {
+  return vm.runInNewContext(file.contents)(file.id);
 }
