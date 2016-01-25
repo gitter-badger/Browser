@@ -23,14 +23,14 @@ describe('browser plugin', function () {
     let css = fixture('simple/index.css');
     let builder = mako().use(browser({ root: fixture('simple') }));
 
-    return builder.build([ js, css ]).then(function (tree) {
-      let jsFile = tree.getFile(js);
+    return builder.build([ js, css ]).then(function (build) {
+      let jsFile = build.tree.getFile(js);
       // js file execs and returns the right value
       assert.strictEqual(exec(jsFile), true);
       // output location is what we expected
       assert.strictEqual(jsFile.output, fixture('simple/build/index.js'));
 
-      let cssFile = tree.getFile(css);
+      let cssFile = build.tree.getFile(css);
       // css file at least contains a substring we expect (not super-reliable)
       assert.include(cssFile.contents, 'background-color: green;');
       // output location is what we expected
@@ -43,12 +43,12 @@ describe('browser plugin', function () {
     let css = fixture('nested/index.css');
     let builder = mako().use(browser({ root: fixture('nested') }));
 
-    return builder.build([ js, css ]).then(function (tree) {
-      let jsFile = tree.getFile(js);
+    return builder.build([ js, css ]).then(function (build) {
+      let jsFile = build.tree.getFile(js);
       // js file execs and returns the right value
       assert.strictEqual(exec(jsFile), 4);
 
-      let cssFile = tree.getFile(css);
+      let cssFile = build.tree.getFile(css);
       // css file at least contains a substring we expect (not super-reliable)
       assert.include(cssFile.contents, 'text-decoration: underline;'); // from index.css
       assert.include(cssFile.contents, 'box-sizing: border-box;'); // from base.css
@@ -60,12 +60,12 @@ describe('browser plugin', function () {
     let css = fixture('vendor/index.css');
     let builder = mako().use(browser({ root: fixture('vendor') }));
 
-    return builder.build([ js, css ]).then(function (tree) {
-      let jsFile = tree.getFile(js);
+    return builder.build([ js, css ]).then(function (build) {
+      let jsFile = build.tree.getFile(js);
       // js file execs and returns the right value
       assert.deepEqual(exec(jsFile), [ 'a', 'a', 'a' ]);
 
-      let cssFile = tree.getFile(css);
+      let cssFile = build.tree.getFile(css);
       // css file at least contains a substring we expect (not super-reliable)
       assert.include(cssFile.contents, 'normalize.css v3.0.3');
     });
@@ -76,8 +76,8 @@ describe('browser plugin', function () {
     let image = fixture('assets/logo.png');
     let builder = mako().use(browser({ root: fixture('assets') }));
 
-    return builder.build(css).then(function (tree) {
-      let file = tree.getFile(image);
+    return builder.build(css).then(function (build) {
+      let file = build.tree.getFile(image);
       assert.strictEqual(file.output, fixture('assets/build/logo.png'));
       assert.isTrue(fs.existsSync(file.output));
     });
