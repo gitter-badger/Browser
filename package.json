@@ -3,11 +3,12 @@
   "version": "0.10.0",
   "description": "A mako plugin bundle for building a front-end project.",
   "keywords": [
-    "mako",
-    "plugin",
-    "bundle",
+    "mako-plugin",
+    "mako-plugin-bundle",
     "browser",
-    "front-end"
+    "front-end",
+    "css",
+    "js"
   ],
   "repository": "makojs/browser",
   "license": "MIT",
