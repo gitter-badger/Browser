@@ -1,4 +1,10 @@
 
+0.11.0 / 2016-05-15
+===================
+
+  * add config for js bundle
+  * chore(package): update dependencies
+
 0.10.1 / 2016-03-06
 ===================
 
