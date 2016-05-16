@@ -6,6 +6,7 @@
 [![npm dependencies](https://img.shields.io/david/makojs/browser.svg)](https://david-dm.org/makojs/browser)
 [![npm dev dependencies](https://img.shields.io/david/dev/makojs/browser.svg)](https://david-dm.org/makojs/browser#info=devDependencies)
 [![build status](https://img.shields.io/travis/makojs/browser.svg)](https://travis-ci.org/makojs/browser)
+[![coverage](https://img.shields.io/coveralls/makojs/browser.svg)](https://coveralls.io/github/makojs/browser)
 
 ## Usage
 
