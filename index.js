@@ -38,6 +38,7 @@ module.exports = function (options) {
     }
 
     mako.use(js({
+      bundle: config.jsBundle,
       extensions: config.jsExtensions,
       resolveOptions: config.resolveOptions,
       root: config.root,
