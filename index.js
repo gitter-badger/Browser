@@ -7,6 +7,7 @@ let debug = require('debug')('mako-browser');
 let defaults = require('defaults');
 let js = require('mako-js');
 let output = require('mako-output');
+let sourcemaps = require('mako-sourcemaps');
 let stat = require('mako-stat');
 let symlink = require('mako-symlink');
 let text = require('mako-text');
@@ -42,15 +43,21 @@ module.exports = function (options) {
       extensions: config.jsExtensions,
       resolveOptions: config.resolveOptions,
       root: config.root,
-      sourceMaps: config.sourceMaps
+      sourceMaps: !!config.sourceMaps
     }));
 
     mako.use(css({
       extensions: config.cssExtensions,
       resolveOptions: config.resolveOptions,
       root: config.root,
-      sourceMaps: config.sourceMaps
+      sourceMaps: !!config.sourceMaps
     }));
+
+    if (config.sourceMaps) {
+      mako.use(sourcemaps([ 'js', 'css' ], {
+        inline: config.sourceMaps === 'inline'
+      }));
+    }
 
     if (config.write) {
       debug('adding write plugins');
