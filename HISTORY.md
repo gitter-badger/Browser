@@ -1,4 +1,9 @@
 
+0.11.1 / 2016-05-17
+===================
+
+  * adding mako-sourcemaps since js/css no longer provide it
+
 0.11.0 / 2016-05-15
 ===================
 
