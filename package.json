@@ -44,7 +44,7 @@
     "rimraf": "^2.4.3"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --cache .",
     "pretest": "npm run lint",
     "test": "istanbul cover _mocha",
     "coveralls": "istanbul-coveralls"
