@@ -18,7 +18,7 @@
     "mako-copy": "^0.9.0",
     "mako-css": "^0.13.0",
     "mako-js": "^0.17.0",
-    "mako-output": "^0.7.0",
+    "mako-output": "^0.8.0",
     "mako-sourcemaps": "^0.1.1",
     "mako-stat": "^0.8.0",
     "mako-symlink": "^0.8.0",
