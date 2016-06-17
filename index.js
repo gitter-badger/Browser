@@ -19,6 +19,7 @@ module.exports = function (options) {
   let config = defaults(options, {
     cssExtensions: null,
     forceCopy: false,
+    jsBundle: null,
     jsExtensions: null,
     output: 'build',
     read: true,

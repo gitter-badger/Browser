@@ -3,10 +3,10 @@
 > A mako plugin bundle for front-end workflows.
 
 [![npm version](https://img.shields.io/npm/v/mako-browser.svg)](https://www.npmjs.com/package/mako-browser)
-[![npm dependencies](https://img.shields.io/david/makojs/browser.svg)](https://david-dm.org/makojs/browser)
-[![npm dev dependencies](https://img.shields.io/david/dev/makojs/browser.svg)](https://david-dm.org/makojs/browser#info=devDependencies)
 [![build status](https://img.shields.io/travis/makojs/browser.svg)](https://travis-ci.org/makojs/browser)
 [![coverage](https://img.shields.io/coveralls/makojs/browser.svg)](https://coveralls.io/github/makojs/browser)
+[![npm dependencies](https://img.shields.io/david/makojs/browser.svg)](https://david-dm.org/makojs/browser)
+[![npm dev dependencies](https://img.shields.io/david/dev/makojs/browser.svg)](https://david-dm.org/makojs/browser#info=devDependencies)
 
 ## Usage
 
@@ -98,6 +98,6 @@ Initializes the plugin, available `options` include:
  - `read` if turned off, it will not attach any read plugins (allowing you to define your own)
  - `resolveOptions` additional arguments passed to [resolve](https://www.npmjs.com/package/resolve) in css/js
  - `root` sets the root project directory (default: `process.cwd()`)
- - `sourceMaps` allows turning on source-maps for js
+ - `sourceMaps` allows turning on source-maps for js and css
  - `symlink` turn on to symlink assets instead of copying (faster for development)
  - `write` if turned off, it will not attach any write plugins (useful when used in a server)
