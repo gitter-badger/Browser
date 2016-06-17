@@ -22,9 +22,9 @@ describe('browser plugin', function () {
     let root = fixture('simple');
     let js = fixture('simple/index.js');
     let css = fixture('simple/index.css');
-    let builder = mako().use(browser());
+    let builder = mako({ root }).use(browser());
 
-    return builder.build({ base: root, path: js }, { base: root, path: css }).then(function (build) {
+    return builder.build(js, css).then(function (build) {
       let jsFile = build.tree.findFile(js);
       // js file execs and returns the right value
       assert.strictEqual(exec(jsFile), true);
@@ -43,9 +43,9 @@ describe('browser plugin', function () {
     let root = fixture('nested');
     let js = fixture('nested/index.js');
     let css = fixture('nested/index.css');
-    let builder = mako().use(browser());
+    let builder = mako({ root }).use(browser());
 
-    return builder.build({ base: root, path: js }, { base: root, path: css }).then(function (build) {
+    return builder.build(js, css).then(function (build) {
       let jsFile = build.tree.findFile(js);
       // js file execs and returns the right value
       assert.strictEqual(exec(jsFile), 4);
@@ -61,9 +61,9 @@ describe('browser plugin', function () {
     let root = fixture('vendor');
     let js = fixture('vendor/index.js');
     let css = fixture('vendor/index.css');
-    let builder = mako().use(browser());
+    let builder = mako({ root }).use(browser());
 
-    return builder.build({ base: root, path: js }, { base: root, path: css }).then(function (build) {
+    return builder.build(js, css).then(function (build) {
       let jsFile = build.tree.findFile(js);
       // js file execs and returns the right value
       assert.deepEqual(exec(jsFile), [ 'a', 'a', 'a' ]);
@@ -78,9 +78,9 @@ describe('browser plugin', function () {
     let root = fixture('assets');
     let css = fixture('assets/index.css');
     let image = fixture('assets/logo.png');
-    let builder = mako().use(browser());
+    let builder = mako({ root }).use(browser());
 
-    return builder.build({ base: root, path: css }).then(function (build) {
+    return builder.build(css).then(function (build) {
       let file = build.tree.findFile(image);
       assert.strictEqual(file.path, fixture('assets/build/logo.png'));
       assert.isTrue(fs.existsSync(file.path));
