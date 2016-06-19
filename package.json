@@ -43,5 +43,10 @@
     "pretest": "npm run lint",
     "test": "istanbul cover _mocha",
     "coveralls": "istanbul-coveralls"
+  },
+  "standard": {
+    "ignore": [
+      "test/fixtures/**"
+    ]
   }
 }
