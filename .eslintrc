@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "@dominicbarnes",
-    "@dominicbarnes/node"
-  ]
-}
