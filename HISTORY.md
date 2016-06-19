@@ -1,4 +1,11 @@
 
+0.14.1 / 2016-06-19
+===================
+
+  * formatting existing code with standard
+  * switch to standard for linting
+  * clean up readme
+
 0.14.0 / 2016-06-17
 ===================
 
