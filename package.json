@@ -13,7 +13,7 @@
   "repository": "makojs/browser",
   "license": "MIT",
   "peerDependencies": {
-    "mako": "^0.12.0"
+    "mako": "^0.12.5"
   },
   "dependencies": {
     "debug": "^2.2.0",
@@ -26,6 +26,7 @@
     "mako-sourcemaps": "^0.4.0",
     "mako-stat": "^0.11.0",
     "mako-symlink": "^0.11.0",
+    "mako-watch": "0.0.1",
     "mako-write": "^0.10.0"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "chai-as-promised": "^5.1.0",
     "istanbul": "^0.4.3",
     "istanbul-coveralls": "^1.0.3",
-    "mako": "^0.12.0",
+    "mako": "^0.12.5",
     "mocha": "^2.3.0",
     "rimraf": "^2.4.3",
     "standard": "^7.1.2"
