@@ -1,4 +1,10 @@
 
+0.14.2 / 2016-06-26
+===================
+
+  * add support for mako-watch
+  * chore(package): update mako-js to version 0.21.1
+
 0.14.1 / 2016-06-19
 ===================
 
