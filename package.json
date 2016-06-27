@@ -1,6 +1,6 @@
 {
   "name": "mako-browser",
-  "version": "0.14.2",
+  "version": "0.14.3",
   "description": "A mako plugin bundle for building a front-end project.",
   "keywords": [
     "mako-plugin",
