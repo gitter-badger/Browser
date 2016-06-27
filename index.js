@@ -36,7 +36,7 @@ module.exports = function (options) {
       debug('adding read plugins')
       if (config.watch) {
         debug('using watch')
-        mako.use(watch())
+        mako.use(watch(config.watch))
       } else {
         debug('using stat')
         mako.use(stat([ 'js', 'json', 'css', assets ]))
