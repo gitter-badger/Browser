@@ -7,6 +7,7 @@
 [![coverage](https://img.shields.io/coveralls/makojs/browser.svg)](https://coveralls.io/github/makojs/browser)
 [![npm dependencies](https://img.shields.io/david/makojs/browser.svg)](https://david-dm.org/makojs/browser)
 [![npm dev dependencies](https://img.shields.io/david/dev/makojs/browser.svg)](https://david-dm.org/makojs/browser#info=devDependencies)
+[![code style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Usage
 
