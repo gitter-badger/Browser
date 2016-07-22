@@ -5,6 +5,7 @@ let copy = require('mako-copy')
 let css = require('mako-css')
 let debug = require('debug')('mako-browser')
 let defaults = require('defaults')
+let html = require('mako-html')
 let js = require('mako-js')
 let output = require('mako-output')
 let sourcemaps = require('mako-sourcemaps')
@@ -39,10 +40,12 @@ module.exports = function (options) {
         mako.use(watch(config.watch))
       } else {
         debug('using stat')
-        mako.use(stat([ 'js', 'json', 'css', assets ]))
+        mako.use(stat([ 'html', 'js', 'json', 'css', assets ]))
       }
-      mako.use(buffer([ 'js', 'json', 'css' ]))
+      mako.use(buffer([ 'html', 'js', 'json', 'css' ]))
     }
+
+    mako.use(html())
 
     mako.use(js({
       bundle: config.jsBundle,
@@ -65,8 +68,8 @@ module.exports = function (options) {
 
     if (config.write) {
       debug('adding write plugins')
-      mako.use(output([ 'js', 'css', assets ], { dir: config.output }))
-      mako.use(write([ 'js', 'css' ]))
+      mako.use(output([ 'html', 'js', 'css', assets ], { dir: config.output }))
+      mako.use(write([ 'html', 'js', 'css' ]))
 
       if (config.sourceMaps) {
         mako.use(output('map', { dir: config.output }))

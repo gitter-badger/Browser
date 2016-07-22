@@ -21,6 +21,7 @@
     "mako-buffer": "^0.11.0",
     "mako-copy": "^0.12.0",
     "mako-css": "^0.16.0",
+    "mako-html": "0.0.1",
     "mako-js": "^0.21.1",
     "mako-output": "^0.11.0",
     "mako-sourcemaps": "^0.4.0",
