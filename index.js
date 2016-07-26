@@ -20,7 +20,9 @@ module.exports = function (options) {
     cssExtensions: null,
     forceCopy: false,
     jsBundle: null,
+    jsCore: null,
     jsExtensions: null,
+    jsModules: null,
     output: 'build',
     read: true,
     resolveOptions: null,
@@ -49,7 +51,9 @@ module.exports = function (options) {
 
     mako.use(js({
       bundle: config.jsBundle,
+      core: config.jsCore,
       extensions: config.jsExtensions,
+      modules: config.jsModules,
       resolveOptions: config.resolveOptions,
       sourceMaps: !!config.sourceMaps
     }))

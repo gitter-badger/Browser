@@ -94,7 +94,9 @@ Initializes the plugin, available `options` include:
  - `cssExtensions` additional CSS extensions (eg: `.styl`, `.less`, etc)
  - `forceCopy` when using copy, override the conditional behavior
  - `jsBundle` filename for shared JS bundle (relative to `root`)
+ - `jsCore` additional core modules for JS files
  - `jsExtensions` additional JS extensions (eg: `.coffee`, `.es`, etc)
+ - `jsModules` additional modules for JS files
  - `output` sets the output directory name (default: `build`)
  - `read` if turned off, it will not attach any read plugins (allowing you to define your own)
  - `resolveOptions` additional arguments passed to [resolve](https://www.npmjs.com/package/resolve) in css/js
