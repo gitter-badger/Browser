@@ -93,6 +93,7 @@ Initializes the plugin, available `options` include:
 
  - `cssExtensions` additional CSS extensions (eg: `.styl`, `.less`, etc)
  - `forceCopy` when using copy, override the conditional behavior
+ - `jsBrowser` used to disable the browser-based build (for electron apps)
  - `jsBundle` filename for shared JS bundle (relative to `root`)
  - `jsCore` additional core modules for JS files
  - `jsExtensions` additional JS extensions (eg: `.coffee`, `.es`, etc)
