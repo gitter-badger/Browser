@@ -98,5 +98,6 @@ describe('browser plugin', function () {
  * @return {*}
  */
 function exec (file) {
-  return vm.runInNewContext(file.contents)(file.id)
+  const id = path.relative(file.base, file.initialPath)
+  return vm.runInNewContext(file.contents)(id)
 }
