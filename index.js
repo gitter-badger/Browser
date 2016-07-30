@@ -19,6 +19,7 @@ module.exports = function (options) {
   let config = defaults(options, {
     cssExtensions: null,
     forceCopy: false,
+    jsBrowser: null,
     jsBundle: null,
     jsCore: null,
     jsExtensions: null,
@@ -50,6 +51,7 @@ module.exports = function (options) {
     mako.use(html())
 
     mako.use(js({
+      browser: config.jsBrowser,
       bundle: config.jsBundle,
       core: config.jsCore,
       extensions: config.jsExtensions,
