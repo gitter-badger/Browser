@@ -1,4 +1,10 @@
 
+0.15.4 / 2016-07-29
+===================
+
+  * fix tests by using relative initial path as id
+  * chore(package): update mako-js to version 0.21.11
+
 0.15.3 / 2016-07-29
 ===================
 
