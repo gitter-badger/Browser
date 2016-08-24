@@ -38,7 +38,7 @@
     "mako": "^0.12.5",
     "mocha": "^3.0.0",
     "rimraf": "^2.4.3",
-    "standard": "^7.1.2"
+    "standard": "^8.0.0"
   },
   "scripts": {
     "lint": "standard",
