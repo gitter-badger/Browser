@@ -104,5 +104,4 @@ Initializes the plugin, available `options` include:
  - `root` sets the root project directory (default: `process.cwd()`)
  - `sourceMaps` allows turning on source-maps for js and css
  - `symlink` turn on to symlink assets instead of copying (faster for development)
- - `watch` turn on to use [mako-watch](https://github.com/makojs/watch) instead of [mako-stat](https://github.com/makojs/stat) for conditional rebuilds
  - `write` if turned off, it will not attach any write plugins (useful when used in a server)

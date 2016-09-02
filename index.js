@@ -11,7 +11,6 @@ let output = require('mako-output')
 let sourcemaps = require('mako-sourcemaps')
 let stat = require('mako-stat')
 let symlink = require('mako-symlink')
-let watch = require('mako-watch')
 let write = require('mako-write')
 
 module.exports = function (options) {
@@ -29,7 +28,6 @@ module.exports = function (options) {
     resolveOptions: null,
     sourceMaps: false,
     symlink: false,
-    watch: false,
     write: true
   })
 
@@ -38,13 +36,7 @@ module.exports = function (options) {
 
     if (config.read) {
       debug('adding read plugins')
-      if (config.watch) {
-        debug('using watch')
-        mako.use(watch(config.watch))
-      } else {
-        debug('using stat')
-        mako.use(stat([ 'html', 'js', 'json', 'css', assets ]))
-      }
+      mako.use(stat([ 'html', 'js', 'json', 'css', assets ]))
       mako.use(buffer([ 'html', 'js', 'json', 'css' ]))
     }
 
