@@ -1,4 +1,11 @@
 
+0.16.0 / 2016-09-02
+===================
+
+  * removing old watch plugin
+  * chore(package): update standard to version 8.0.0
+  * chore(package): update mocha to version 3.0.0
+
 0.15.4 / 2016-07-29
 ===================
 
