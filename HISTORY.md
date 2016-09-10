@@ -1,4 +1,9 @@
 
+0.18.0 / 2016-09-09
+===================
+
+  * simplifying api, assets are read into memory by default (copy/symlink are still available)
+
 0.17.0 / 2016-09-05
 ===================
 
