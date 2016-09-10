@@ -1,3 +1,4 @@
+
 'use strict'
 
 let buffer = require('mako-buffer')
@@ -16,69 +17,53 @@ let write = require('mako-write')
 module.exports = function (options) {
   debug('initialize %j', options)
   let config = defaults(options, {
-    cssExtensions: null,
-    forceCopy: false,
-    jsBrowser: null,
-    jsBundle: null,
-    jsCore: null,
-    jsExtensions: null,
-    jsModules: null,
+    bundle: false,
+    copy: false,
+    css: null,
+    js: null,
     output: 'build',
-    read: true,
-    resolveOptions: null,
+    resolve: null,
     sourceMaps: false,
-    symlink: false,
-    write: true
+    symlink: false
   })
 
   return function browser (mako) {
     let assets = [ css.images, css.fonts ]
 
-    if (config.read) {
-      debug('adding read plugins')
-      mako.use(stat([ 'html', 'js', 'json', 'css', assets ]))
-      mako.use(buffer([ 'html', 'js', 'json', 'css' ]))
-    }
+    mako.use(stat([ 'html', 'js', 'json', 'css', assets ]))
+    mako.use(buffer([ 'html', 'js', 'json', 'css' ]))
 
     mako.use(html())
 
     mako.use(js({
-      browser: config.jsBrowser,
-      bundle: config.jsBundle,
-      core: config.jsCore,
-      extensions: config.jsExtensions,
-      modules: config.jsModules,
-      resolveOptions: config.resolveOptions,
+      bundle: config.bundle,
+      extensions: config.js,
+      resolveOptions: config.resolve,
       sourceMaps: !!config.sourceMaps
     }))
 
     mako.use(css({
-      extensions: config.cssExtensions,
-      resolveOptions: config.resolveOptions,
+      extensions: config.css,
+      resolveOptions: config.resolve,
       sourceMaps: !!config.sourceMaps
     }))
 
-    if (config.sourceMaps) {
-      mako.use(sourcemaps([ 'js', 'css' ], {
-        inline: config.sourceMaps === 'inline'
-      }))
+    mako.use(output([ 'html', 'js', 'css', assets ], { dir: config.output }))
+
+    mako.use(write([ 'html', 'js', 'css' ]))
+
+    if (config.copy) {
+      mako.use(copy(assets, { force: config.copy === 'force' }))
+    } else if (config.symlink) {
+      mako.use(symlink(assets))
+    } else {
+      mako.use(buffer(assets), write(assets))
     }
 
-    if (config.write) {
-      debug('adding write plugins')
-      mako.use(output([ 'html', 'js', 'css', assets ], { dir: config.output }))
-      mako.use(write([ 'html', 'js', 'css' ]))
-
-      if (config.sourceMaps) {
-        mako.use(output('map', { dir: config.output }))
-        mako.use(write('map'))
-      }
-
-      if (config.symlink) {
-        mako.use(symlink(assets))
-      } else {
-        mako.use(copy(assets, { force: config.forceCopy }))
-      }
+    if (config.sourceMaps) {
+      mako.use(sourcemaps([ 'js', 'css' ], { inline: config.sourceMaps === 'inline' }))
+      mako.use(output('map', { dir: config.output }))
+      mako.use(write('map'))
     }
   }
 }
