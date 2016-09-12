@@ -25,7 +25,7 @@
     "mako-js": "^0.22.0",
     "mako-output": "^0.12.0",
     "mako-sourcemaps": "^0.5.0",
-    "mako-stat": "^0.12.0",
+    "mako-stat": "^0.13.0",
     "mako-symlink": "^0.12.0",
     "mako-write": "^0.11.0"
   },
