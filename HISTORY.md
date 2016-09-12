@@ -1,4 +1,10 @@
 
+0.18.1 / 2016-09-11
+===================
+
+  * update mako-stat
+  * chore(package): update istanbul to version 0.4.4
+
 0.18.0 / 2016-09-09
 ===================
 
