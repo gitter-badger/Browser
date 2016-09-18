@@ -11,11 +11,8 @@
 
 ## Usage
 
-This plugin is designed for front-end build workflows, namely handling JS and
-CSS. (including the assets linked to in your CSS) A lot of concepts are merged
-from [Component](https://github.com/componentjs/component),
-[Duo](https://github.com/duojs/duo) and
-[Browserify](https://github.com/substack/browserify).
+This plugin is designed for front-end build workflows. A lot of concepts are
+merged from [Component][component], [Duo][duo] and [Browserify][browserify].
 
 ## JS
 
@@ -76,10 +73,9 @@ recursively into a single file. (by default, that file will be
 copied over to the `build` directory, and the necessary URLs will be rewritten.
 
 CSS can also be distributed via npm, using the same resolve semantics as for JS.
-(in fact, it is the [same module](https://www.npmjs.com/package/resolve) under
-the hood!) Where you would use an `index.js`, an `index.css` will be looked for
-instead. (it will even consider the `package.json` during resolution, such as
-the `main` property)
+(in fact, it is the [same module][resolve] under the hood!) Where you would use
+an `index.js`, an `index.css` will be looked for instead. (it will even consider
+the `package.json` during resolution, such as the `main` property)
 
 ```css
 @import "normalize.css";
@@ -89,6 +85,12 @@ This will simply import
 [normalize.css](https://github.com/necolas/normalize.css) from your
 `node_modules` directory, in the same way as your JS packages get resolved.
 
+## HTML
+
+Included in this bundle is also [mako-html][mako-html], which allows HTML files
+to be parsed for dependencies to JS, CSS and even images. If your project's HTML
+is static, this can be a great addition to your workflow.
+
 ## Assets
 
 Assets refers to any external resources linked to by CSS files, such as images
@@ -96,16 +98,16 @@ and fonts. The default behavior with these is to read them into memory as
 buffers, and write them to disk directly. This allows other plugins to perform
 operations like image optimization without dealing with the originals.
 
-If you are going to skip image optimization and other operations altogether,
-you can get better build performance by using `copy: true` in your config. This
-uses [mako-copy](https://github.com/makojs/copy) under the hood, so it will only
-copy again when the original is modified.
+If you are going to skip image optimization and other operations altogether, you
+can get better build performance by using `copy: true` in your config. This uses
+[mako-copy][mako-copy] under the hood, so it will only copy again when the
+original is modified.
 
 During development, you can get even better performance from your builds by
 using `symlink: true`, which skips copying files altogether in favor of links.
-This uses [mako-symlink](https://github.com/makojs/symlink) under the hood, so
-it avoids creating links that already exist. (**NOTE:** this is not ideal for a
-production setting, as you probably would prefer real files instead of links)
+This uses [mako-symlink][mako-symlink] under the hood, so it avoids creating
+links that already exist. (**NOTE:** this is not ideal for a production setting,
+as you probably would prefer real files instead of links)
 
 ## API
 
@@ -118,6 +120,14 @@ Initializes the plugin, available `options` include:
  - `css` additional CSS extensions (eg: `.styl`, `.less`, etc)
  - `js` additional JS extensions (eg: `.coffee`, `.es`, etc)
  - `output` sets the output directory name (default: `build`)
- - `resolve` additional arguments passed to [resolve](https://www.npmjs.com/package/resolve) in css/js
+ - `resolve` additional arguments passed to [resolve][resolve] in css/js
  - `sourceMaps` allows turning on source-maps for js and css
  - `symlink` symlinks assets to the output directory
+
+
+[component]: https://github.com/componentjs/component
+[duo]: https://github.com/duojs/duo
+[browserify]: https://browserify.org/
+[resolve]: https://www.npmjs.com/package/resolve
+[mako-copy]: https://github.com/makojs/copy
+[mako-symlink]: https://github.com/makojs/symlink
