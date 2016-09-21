@@ -1,13 +1,13 @@
 # mako-browser
 
-> A mako plugin bundle for front-end workflows.
+> A [mako][mako] plugin bundle for front-end workflows.
 
-[![npm version](https://img.shields.io/npm/v/mako-browser.svg)](https://www.npmjs.com/package/mako-browser)
-[![build status](https://img.shields.io/travis/makojs/browser.svg)](https://travis-ci.org/makojs/browser)
-[![coverage](https://img.shields.io/coveralls/makojs/browser.svg)](https://coveralls.io/github/makojs/browser)
-[![npm dependencies](https://img.shields.io/david/makojs/browser.svg)](https://david-dm.org/makojs/browser)
-[![npm dev dependencies](https://img.shields.io/david/dev/makojs/browser.svg)](https://david-dm.org/makojs/browser#info=devDependencies)
-[![code style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![npm version][npm-badge]][npm]
+[![build status][travis-badge]][travis]
+[![coverage][coveralls-badge]][coveralls]
+[![npm dependencies][david-badge]][david]
+[![npm dev dependencies][david-dev-badge]][david-dev]
+[![code style][standard-badge]][standard]
 
 ## Usage
 
@@ -95,7 +95,7 @@ is static, this can be a great addition to your workflow.
 
 Assets refers to any external resources linked to by CSS files, such as images
 and fonts. The default behavior with these is to read them into memory as
-buffers, and write them to disk directly. This allows other plugins to perform
+browsers, and write them to disk directly. This allows other plugins to perform
 operations like image optimization without dealing with the originals.
 
 If you are going to skip image optimization and other operations altogether, you
@@ -125,6 +125,19 @@ Initializes the plugin, available `options` include:
  - `symlink` symlinks assets to the output directory
 
 
+[mako]: https://github.com/makojs/core
+[coveralls]: https://coveralls.io/github/makojs/browser
+[coveralls-badge]: https://img.shields.io/coveralls/makojs/browser.svg
+[david]: https://david-dm.org/makojs/browser
+[david-badge]: https://img.shields.io/david/makojs/browser.svg
+[david-dev]: https://david-dm.org/makojs/browser#info=devDependencies
+[david-dev-badge]: https://img.shields.io/david/dev/makojs/browser.svg
+[npm]: https://www.npmjs.com/package/mako-browser
+[npm-badge]: https://img.shields.io/npm/v/mako-browser.svg
+[standard]: http://standardjs.com/
+[standard-badge]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[travis]: https://travis-ci.org/makojs/browser
+[travis-badge]: https://img.shields.io/travis/makojs/browser.svg
 [component]: https://github.com/componentjs/component
 [duo]: https://github.com/duojs/duo
 [browserify]: https://browserify.org/
